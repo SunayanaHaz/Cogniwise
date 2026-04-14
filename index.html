@@ -12,52 +12,72 @@
 
     body {
       margin: 0;
-      background: linear-gradient(180deg, #eef4ff 0%, #f7fbff 100%);
-      color: #1e2a3a;
+      background: linear-gradient(180deg, #eef4ff 0%, #f8fbff 100%);
+      color: #1e293b;
       display: flex;
       justify-content: center;
       padding: 20px;
     }
 
-    .phone {
+    .app {
       width: 100%;
-      max-width: 420px;
+      max-width: 430px;
+      min-height: 100vh;
       background: white;
       border-radius: 28px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
       overflow: hidden;
-      min-height: 100vh;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+      border: 1px solid #e5e7eb;
+      position: relative;
     }
 
-    .header {
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    .top {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
       color: white;
       padding: 24px 20px 28px;
     }
 
-    .header h1 {
-      margin: 0;
+    .brand {
       font-size: 28px;
+      font-weight: bold;
+      margin: 0;
     }
 
-    .header p {
+    .tagline {
       margin: 8px 0 0;
-      opacity: 0.95;
-      line-height: 1.4;
       font-size: 14px;
+      line-height: 1.5;
+      opacity: 0.95;
     }
 
-    .content {
+    .screen {
+      display: none;
       padding: 18px;
+      padding-bottom: 100px;
+    }
+
+    .screen.active {
+      display: block;
     }
 
     .card {
-      background: #ffffff;
+      background: white;
+      border: 1px solid #edf2f7;
       border-radius: 20px;
       padding: 18px;
       margin-bottom: 16px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-      border: 1px solid #edf2f7;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .small {
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     .score-wrap {
@@ -65,18 +85,18 @@
     }
 
     .score-number {
-      font-size: 56px;
+      font-size: 62px;
       font-weight: bold;
-      margin: 10px 0 0;
+      margin: 12px 0 6px;
     }
 
     .score-label {
       display: inline-block;
-      margin-top: 10px;
       padding: 8px 14px;
       border-radius: 999px;
-      font-weight: bold;
       font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
 
     .sharp {
@@ -94,9 +114,21 @@
       color: #991b1b;
     }
 
-    h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
+    .button {
+      width: 100%;
+      border: none;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      border-radius: 14px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      background: #f1f5f9;
+      color: #0f172a;
     }
 
     .field {
@@ -105,40 +137,24 @@
 
     .field label {
       display: block;
-      font-weight: bold;
       margin-bottom: 8px;
       font-size: 14px;
-    }
-
-    .value-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      margin-top: 6px;
-      color: #4b5563;
+      font-weight: bold;
     }
 
     input[type="range"] {
       width: 100%;
     }
 
-    .button {
-      width: 100%;
-      border: none;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      color: white;
-      padding: 14px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
+    .value-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 6px;
     }
 
-    .button:hover {
-      opacity: 0.95;
-    }
-
-    .insight-item {
+    .metric-row {
       display: flex;
       justify-content: space-between;
       padding: 10px 0;
@@ -146,34 +162,45 @@
       font-size: 14px;
     }
 
-    .insight-item:last-child {
+    .metric-row:last-child {
       border-bottom: none;
     }
 
-    .action {
+    .action-card {
       background: #f8fafc;
+      border: 1px solid #e5e7eb;
       border-radius: 16px;
       padding: 14px;
       margin-bottom: 10px;
-      border: 1px solid #e5e7eb;
     }
 
-    .action strong {
+    .action-card strong {
       display: block;
       margin-bottom: 6px;
     }
 
-    .small {
-      font-size: 13px;
-      color: #4b5563;
-      line-height: 1.5;
+    .connect-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
     }
 
-    .chart {
+    .pill {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .trend-chart {
       display: flex;
       align-items: end;
       gap: 8px;
-      height: 120px;
+      height: 140px;
       margin-top: 12px;
     }
 
@@ -184,8 +211,8 @@
 
     .bar {
       width: 100%;
-      border-radius: 10px 10px 4px 4px;
       background: linear-gradient(180deg, #60a5fa, #7c3aed);
+      border-radius: 10px 10px 4px 4px;
       min-height: 10px;
       transition: height 0.3s ease;
     }
@@ -196,24 +223,98 @@
       color: #64748b;
     }
 
-    .footer-note {
-      text-align: center;
-      font-size: 12px;
-      color: #6b7280;
-      padding: 4px 0 16px;
+    .bar-value {
+      font-size: 11px;
+      color: #334155;
+      margin-top: 4px;
+      font-weight: bold;
+    }
+
+    .insight-box {
+      background: linear-gradient(180deg, #eff6ff, #f8fafc);
+      border: 1px solid #dbeafe;
+      border-radius: 16px;
+      padding: 14px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+    }
+
+    .nav button {
+      flex: 1;
+      border: none;
+      background: white;
+      padding: 14px 8px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #64748b;
+      cursor: pointer;
+    }
+
+    .nav button.active {
+      color: #2563eb;
+      background: #f8fbff;
     }
   </style>
 </head>
 <body>
-  <div class="phone">
-    <div class="header">
-      <h1>CogniWise</h1>
-      <p>Your daily cognitive readiness score from sleep, stress, focus, and load.</p>
+  <div class="app">
+    <div class="top">
+      <h1 class="brand">CogniWise</h1>
+      <p class="tagline">A zero-hardware cognitive readiness app that turns daily inputs into one simple brain performance score.</p>
     </div>
 
-    <div class="content">
+    <!-- HOME SCREEN -->
+    <div class="screen active" id="homeScreen">
+      <div class="card score-wrap">
+        <h2>Today’s CogniScore</h2>
+        <div class="score-number" id="scoreNumber">72</div>
+        <div class="score-label strained" id="scoreStatus">Strained</div>
+        <p class="small" id="scoreExplanation">
+          Your sleep is fair, but mental load is elevated. Build in extra recovery breaks today.
+        </p>
+      </div>
+
       <div class="card">
-        <h2>90-Second Check-in</h2>
+        <h2>Connected sources</h2>
+        <p class="small">For the MVP, these are shown as connected data sources already available on your phone.</p>
+        <div class="connect-row">
+          <div class="pill">Apple Health</div>
+          <div class="pill">Google Calendar</div>
+          <div class="pill">Sleep Data</div>
+          <div class="pill">Hydration</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>What’s affecting your brain today</h2>
+        <div class="metric-row"><span>Sleep</span><strong id="sleepInsight">75 / 100</strong></div>
+        <div class="metric-row"><span>Energy</span><strong id="energyInsight">70 / 100</strong></div>
+        <div class="metric-row"><span>Stress</span><strong id="stressInsight">45 / 100</strong></div>
+        <div class="metric-row"><span>Mental Load</span><strong id="loadInsight">65 / 100</strong></div>
+        <div class="metric-row"><span>Hydration</span><strong id="hydrationInsight">60 / 100</strong></div>
+      </div>
+
+      <div class="card">
+        <h2>Act now</h2>
+        <div id="actions"></div>
+      </div>
+    </div>
+
+    <!-- CHECK-IN SCREEN -->
+    <div class="screen" id="checkinScreen">
+      <div class="card">
+        <h2>90-Second Check-In</h2>
+        <p class="small">Move the sliders, then press the button. The app turns this into your daily cognitive readiness score.</p>
 
         <div class="field">
           <label for="sleep">How did you sleep last night?</label>
@@ -265,41 +366,46 @@
           </div>
         </div>
 
-        <button class="button" onclick="calculateScore()">Get My CogniScore</button>
-      </div>
-
-      <div class="card score-wrap">
-        <h2>Today’s CogniScore</h2>
-        <div class="score-number" id="scoreNumber">72</div>
-        <div class="score-label strained" id="scoreStatus">Strained</div>
-        <p class="small" id="scoreExplanation">
-          Your sleep is okay, but your mental load is high today. You may want extra recovery breaks.
-        </p>
+        <button class="button" onclick="calculateScore()">Update My CogniScore</button>
       </div>
 
       <div class="card">
-        <h2>What’s affecting your brain today</h2>
-        <div class="insight-item"><span>Sleep</span><strong id="sleepInsight">75 / 100</strong></div>
-        <div class="insight-item"><span>Energy</span><strong id="energyInsight">70 / 100</strong></div>
-        <div class="insight-item"><span>Stress</span><strong id="stressInsight">45 / 100</strong></div>
-        <div class="insight-item"><span>Mental Load</span><strong id="loadInsight">65 / 100</strong></div>
-        <div class="insight-item"><span>Hydration</span><strong id="hydrationInsight">60 / 100</strong></div>
+        <h2>Why judges will like this</h2>
+        <div class="insight-box">
+          CogniWise does not ask people to buy another wearable. It uses the signals already around them and turns scattered data into a simple daily decision tool.
+        </div>
+      </div>
+    </div>
+
+    <!-- TRENDS SCREEN -->
+    <div class="screen" id="trendsScreen">
+      <div class="card">
+        <h2>5-Day Trend</h2>
+        <p class="small">This makes the product feel habit-based and sticky, not just a one-time calculator.</p>
+        <div class="trend-chart" id="trendChart"></div>
       </div>
 
       <div class="card">
-        <h2>Act now</h2>
-        <div id="actions"></div>
+        <h2>Pattern insight</h2>
+        <div class="insight-box" id="trendInsight">
+          Your score dips on higher-load days. Reducing stress and improving hydration could lift your baseline.
+        </div>
       </div>
 
       <div class="card">
-        <h2>Last 5 Days Trend</h2>
-        <p class="small">This helps judges see that the product can become a daily habit.</p>
-        <div class="chart" id="chart"></div>
+        <h2>Tomorrow recommendation</h2>
+        <div class="action-card">
+          <strong id="tomorrowTitle">Protect your focus early</strong>
+          <span class="small" id="tomorrowText">Start the day with your hardest task before meetings and decision fatigue build up.</span>
+        </div>
       </div>
+    </div>
 
-      <div class="footer-note">
-        CogniWise MVP • Zero-hardware cognitive readiness demo
-      </div>
+    <!-- NAV -->
+    <div class="nav">
+      <button class="active" onclick="showScreen('homeScreen', this)">Home</button>
+      <button onclick="showScreen('checkinScreen', this)">Check-In</button>
+      <button onclick="showScreen('trendsScreen', this)">Trends</button>
     </div>
   </div>
 
@@ -330,6 +436,20 @@
       });
     });
 
+    function showScreen(screenId, button) {
+      document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+      });
+
+      document.getElementById(screenId).classList.add("active");
+
+      document.querySelectorAll(".nav button").forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+    }
+
     function getStatus(score) {
       if (score >= 80) return { label: "Sharp", className: "sharp" };
       if (score >= 60) return { label: "Strained", className: "strained" };
@@ -341,15 +461,15 @@
         return "Your stress and mental load are both high. This looks like a cognitive overload day.";
       }
       if (sleepVal < 50) {
-        return "Poor sleep is dragging your score down today. Your brain may struggle with focus and recovery.";
+        return "Poor sleep is one of the biggest drivers of your lower score today.";
       }
       if (hydrationVal < 45) {
-        return "Low hydration may be reducing alertness. A little water and a short break could help quickly.";
+        return "Low hydration may be reducing alertness and concentration right now.";
       }
       if (energyVal > 75 && sleepVal > 70 && stressVal < 50) {
         return "Your signals look strong today. This is a good day for deep work and important decisions.";
       }
-      return "Your brain is holding steady, but there are signs of strain. Plan a few recovery moments today.";
+      return "Your score is steady, but there are early signs of strain. Add small recovery moments today.";
     }
 
     function getActions(score, sleepVal, stressVal, loadVal, hydrationVal) {
@@ -364,36 +484,36 @@
 
       if (stressVal > 65) {
         actions.push({
-          title: "Try box breathing",
-          text: "Breathe in for 4, hold for 4, out for 4, hold for 4. Repeat for one minute."
+          title: "Try 1-minute box breathing",
+          text: "Breathe in for 4, hold for 4, out for 4, hold for 4. Repeat four times."
         });
       }
 
       if (loadVal > 70) {
         actions.push({
-          title: "Take a screen break",
-          text: "Step away from your screen for 5 minutes before your next mentally demanding task."
+          title: "Take a short screen break",
+          text: "Step away for 5 minutes before your next mentally demanding task."
         });
       }
 
       if (sleepVal < 55) {
         actions.push({
           title: "Protect decision energy",
-          text: "Avoid making your hardest decision when tired. Move it later if possible."
+          text: "Delay your hardest decision until after food, water, and a short reset if possible."
         });
       }
 
       if (score >= 80) {
         actions.push({
           title: "Use your sharp window",
-          text: "You are in a strong cognitive zone. Schedule deep work or creative thinking now."
+          text: "You are in a strong cognitive zone. Schedule deep work now."
         });
       }
 
       if (actions.length === 0) {
         actions.push({
           title: "Keep momentum steady",
-          text: "Take one short movement break and stay consistent with hydration through the day."
+          text: "Take one short walk and stay consistent with hydration through the day."
         });
       }
 
@@ -406,24 +526,27 @@
 
       actions.forEach(action => {
         const div = document.createElement("div");
-        div.className = "action";
+        div.className = "action-card";
         div.innerHTML = `<strong>${action.title}</strong><span class="small">${action.text}</span>`;
         actionsContainer.appendChild(div);
       });
     }
 
-    function renderChart(todayScore) {
-      const chart = document.getElementById("chart");
-      chart.innerHTML = "";
-
-      const values = [
-        Math.max(40, todayScore - 12),
-        Math.max(45, todayScore - 6),
-        Math.max(35, todayScore - 18),
-        Math.max(50, todayScore - 4),
+    function buildTrendData(todayScore) {
+      return [
+        Math.max(42, todayScore - 10),
+        Math.max(40, todayScore - 5),
+        Math.max(38, todayScore - 16),
+        Math.max(45, todayScore - 7),
         todayScore
       ];
+    }
 
+    function renderTrendChart(todayScore) {
+      const chart = document.getElementById("trendChart");
+      chart.innerHTML = "";
+
+      const values = buildTrendData(todayScore);
       const labels = ["Mon", "Tue", "Wed", "Thu", "Today"];
 
       values.forEach((value, index) => {
@@ -438,10 +561,39 @@
         label.className = "bar-label";
         label.textContent = labels[index];
 
+        const val = document.createElement("div");
+        val.className = "bar-value";
+        val.textContent = value;
+
         group.appendChild(bar);
         group.appendChild(label);
+        group.appendChild(val);
         chart.appendChild(group);
       });
+    }
+
+    function renderTrendInsight(score, stressVal, loadVal, hydrationVal) {
+      let insight = "Your score dips on higher-load days. Reducing stress and improving hydration could lift your baseline.";
+      let tomorrowTitle = "Protect your focus early";
+      let tomorrowText = "Start the day with your hardest task before meetings and decision fatigue build up.";
+
+      if (stressVal > 70 && loadVal > 70) {
+        insight = "The biggest pattern is overload. Heavy demand combined with stress creates the sharpest score drop.";
+        tomorrowTitle = "Reduce overload points";
+        tomorrowText = "Block one 20-minute recovery break and avoid stacking demanding tasks back to back.";
+      } else if (hydrationVal < 50) {
+        insight = "Hydration looks like an easy improvement lever. Small physical habits may quickly improve mental sharpness.";
+        tomorrowTitle = "Hydrate earlier";
+        tomorrowText = "Drink water earlier in the day instead of trying to catch up later.";
+      } else if (score >= 80) {
+        insight = "Your system looks resilient today. The pattern suggests your best scores happen when sleep and calm both stay high.";
+        tomorrowTitle = "Use peak cognition wisely";
+        tomorrowText = "Schedule strategy, writing, or problem solving during your strongest morning window.";
+      }
+
+      document.getElementById("trendInsight").textContent = insight;
+      document.getElementById("tomorrowTitle").textContent = tomorrowTitle;
+      document.getElementById("tomorrowText").textContent = tomorrowText;
     }
 
     function calculateScore() {
@@ -467,6 +619,7 @@
       const actions = getActions(score, sleepVal, stressVal, loadVal, hydrationVal);
 
       document.getElementById("scoreNumber").textContent = score;
+
       const scoreStatus = document.getElementById("scoreStatus");
       scoreStatus.textContent = status.label;
       scoreStatus.className = `score-label ${status.className}`;
@@ -480,7 +633,8 @@
       document.getElementById("hydrationInsight").textContent = `${hydrationVal} / 100`;
 
       renderActions(actions);
-      renderChart(score);
+      renderTrendChart(score);
+      renderTrendInsight(score, stressVal, loadVal, hydrationVal);
     }
 
     calculateScore();
